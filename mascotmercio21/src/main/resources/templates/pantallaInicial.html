@@ -27,7 +27,7 @@
             height: auto;
         }
         .container {
-            background-color: #ffffff;
+            background-color:white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -43,13 +43,25 @@
             text-align: left;
         }
     
-        .side-photos {
+        .side-photo1 {
             display: flex;
             flex-direction: column; /* Cambio a columna para alinear verticalmente */
             justify-content: space-around;
-            align-items: flex-start; /* Alineación a la izquierda */
+            align-self: flex-start; /* Alineación a la izquierda */
+            text-align: left;
         }
-        .side-photos img {
+        .side-photo1 img {
+            max-width: 100px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+        }
+        .side-photo2 {
+            display: flex;
+            flex-direction: column; /* Cambio a columna para alinear verticalmente */
+            justify-content: space-around;
+            align-self: flex-end; /* Alineación a la izquierda */
+            text-align: left;
+        }
+        .side-photo2 img {
             max-width: 100px; /* Ajusta el tamaño de la imagen */
             height: auto;
         }
@@ -69,10 +81,10 @@
 </head>
 <body>
     <div class="header">
-        <img src="C:\Users\usuario\Downloads\mascotmercio2024\imagenes\LOGO_MASCOTMERCIO.png" alt="Logo de Mascotmercio" class="logo">
+        <img src="C:\Users\vrr20\OneDrive\Escritorio\ISST\ISST-21-Mascotmercio\mascotmercio21\src\main\resources\static\fotos\logo_mascotmercio.png" alt="Logo de Mascotmercio" class="logo">
     </div>
-    <div class="side-photos">
-        <img src="C:\Users\usuario\Downloads\mascotmercio2024\imagenes\mascota.PNG" alt="Cliente con mascota">
+    <div class="side-photo1">
+        <img src=" C:\Users\vrr20\OneDrive\Escritorio\ISST\ISST-21-Mascotmercio\mascotmercio21\src\main\resources\static\fotos\mascota.png" alt="Cliente con mascota">
         <p>Texto a la izquierda</p>
     </div>
     <div class="container">
@@ -89,7 +101,7 @@
             <button type="registrarPropietario" class="registro">Registrarse como Propietario</button>
         </div>
     </div>
-    <div class="side-photos">
+    <div class="side-photo2">
         <img src="C:\Users\usuario\Downloads\mascotmercio2024\imagenes\propietario.jpg" alt="Propietario con mascota">
         <p>Texto a la derecha</p>
     </div>
