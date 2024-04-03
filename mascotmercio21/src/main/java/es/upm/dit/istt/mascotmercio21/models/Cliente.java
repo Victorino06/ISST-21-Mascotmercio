@@ -1,4 +1,4 @@
-package es.upm.isst.mascotmercio.model;
+package es.upm.isst.mascotmercio21.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
