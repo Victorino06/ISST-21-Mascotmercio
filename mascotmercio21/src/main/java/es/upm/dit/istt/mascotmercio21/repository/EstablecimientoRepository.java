@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Repository
-public interface PropietarioRepository extends CrudRepository<Propietario, Integer> {
+public interface EstablecimientoRepository extends CrudRepository<Propietario, Integer> {
     List<Establecimiento> findAll();
     Establecimiento findById(Establecimiento id);
 }
