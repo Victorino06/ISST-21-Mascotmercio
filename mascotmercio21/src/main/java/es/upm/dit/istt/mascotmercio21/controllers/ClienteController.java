@@ -1,22 +1,19 @@
 package es.upm.dit.istt.mascotmercio21.controllers;
 
-import es.upm.dit.istt.mascotmercio21.models.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
-    private ClienteService clienteService;
+    private ClienteRepository clienteRepository;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> obtenerCliente(@PathVariable Integer id) {
-        Cliente cliente = clienteService.obtenerClientePorId(id);
+    public ResponseEntity<Cliente> obtenerCliente(@PathVariable Long id) {
+        Cliente cliente = clienteRepository.findById(id).orElse(null);
         if (cliente != null) {
             return ResponseEntity.ok(cliente);
         } else {
@@ -26,30 +23,31 @@ public class ClienteController {
 
     @PostMapping("/")
     public ResponseEntity<Cliente> agregarCliente(@RequestBody Cliente cliente) {
-        Cliente nuevoCliente = clienteService.agregarCliente(cliente);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoCliente);
+        Cliente nuevoCliente = clienteRepository.save(cliente);
+        return ResponseEntity.ok(nuevoCliente);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> actualizarCliente(@PathVariable Integer id, @RequestBody Cliente cliente) {
-        Cliente clienteExistente = clienteService.obtenerClientePorId(id);
+    public ResponseEntity<Cliente> actualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+        Cliente clienteExistente = clienteRepository.findById(id).orElse(null);
         if (clienteExistente != null) {
             cliente.setId(id);
-            clienteService.actualizarCliente(cliente);
-            return ResponseEntity.ok(cliente);
+            Cliente clienteActualizado = clienteRepository.save(cliente);
+            return ResponseEntity.ok(clienteActualizado);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarCliente(@PathVariable Integer id) {
-        Cliente clienteExistente = clienteService.obtenerClientePorId(id);
+    public ResponseEntity<Void> eliminarCliente(@PathVariable Long id) {
+        Cliente clienteExistente = clienteRepository.findById(id).orElse(null);
         if (clienteExistente != null) {
-            clienteService.eliminarCliente(id);
+            clienteRepository.delete(clienteExistente);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
     }
 }
+
