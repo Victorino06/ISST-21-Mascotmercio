@@ -12,7 +12,7 @@ public class PropietarioController {
     private PropietarioRepository propietarioRepository;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Propietario> obtenerPropietario(@PathVariable Long id) {
+    public ResponseEntity<Propietario> obtenerPropietario(@PathVariable Integer id) {
         Propietario propietario = propietarioRepository.findById(id).orElse(null);
         if (propietario != null) {
             return ResponseEntity.ok(propietario);
@@ -28,7 +28,7 @@ public class PropietarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Propietario> actualizarPropietario(@PathVariable Long id, @RequestBody Propietario propietario) {
+    public ResponseEntity<Propietario> actualizarPropietario(@PathVariable Integer id, @RequestBody Propietario propietario) {
         Propietario propietarioExistente = propietarioRepository.findById(id).orElse(null);
         if (propietarioExistente != null) {
             propietario.setId(id);
@@ -40,7 +40,7 @@ public class PropietarioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarPropietario(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarPropietario(@PathVariable Integer id) {
         Propietario propietarioExistente = propietarioRepository.findById(id).orElse(null);
         if (propietarioExistente != null) {
             propietarioRepository.delete(propietarioExistente);
