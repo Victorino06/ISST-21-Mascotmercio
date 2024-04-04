@@ -1,5 +1,7 @@
 package es.upm.dit.istt.mascotmercio21.controllers;
 
+import es.upm.dit.istt.mascotmercio21.models.Propietario;
+import es.upm.dit.istt.mascotmercio21.repository.PropietarioRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
