@@ -1,4 +1,4 @@
-package es.upm.dit.istt.mascotmercio21.respository
+package es.upm.dit.istt.mascotmercio21.respository;
 
 import es.upm.dit.istt.mascotmercio21.models.Establecimiento;
 import org.springframework.data.jpa.repository.JpaRepository;
