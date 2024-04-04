@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface PropietarioRepository extends CrudRepository<Propietario, Integer> {
     List<Propietario> findAll();
-   Optional <Propietario> findById(Propietario id);
+    Propietario findById(Propietario id);
 }
