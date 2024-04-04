@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface PropietarioRepository extends CrudRepository<Propietario, Integer> {
     List<Propietario> findAll();
-   Optional <Integer> findById(Integer id);
+   Optional <Propietario> findById(Propietario id);
 }
