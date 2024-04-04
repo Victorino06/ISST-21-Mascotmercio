@@ -12,7 +12,7 @@ public class ClienteController {
     private ClienteRepository clienteRepository;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> obtenerCliente(@PathVariable Long id) {
+    public ResponseEntity<Cliente> obtenerCliente(@PathVariable Integer id) {
         Cliente cliente = clienteRepository.findById(id).orElse(null);
         if (cliente != null) {
             return ResponseEntity.ok(cliente);
@@ -28,7 +28,7 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> actualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> actualizarCliente(@PathVariable Integer id, @RequestBody Cliente cliente) {
         Cliente clienteExistente = clienteRepository.findById(id).orElse(null);
         if (clienteExistente != null) {
             cliente.setId(id);
@@ -40,7 +40,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarCliente(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarCliente(@PathVariable Integer id) {
         Cliente clienteExistente = clienteRepository.findById(id).orElse(null);
         if (clienteExistente != null) {
             clienteRepository.delete(clienteExistente);
