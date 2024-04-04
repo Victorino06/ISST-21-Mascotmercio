@@ -17,6 +17,8 @@ public class Establecimiento {
     private String direccion;
     private LocalTime horario; // Representa el horario utilizando LocalTime
     private String descripcion;
+    private Double x;
+    private Double y; 
     @Lob
     private byte[] foto; // Representa la foto como un arreglo de bytes
 
@@ -29,6 +31,8 @@ public class Establecimiento {
         this.horario = horario;
         this.descripcion = descripcion;
         this.foto = foto;
+        this.x = x;
+        this.y = y;
     }
 
     // Getters y Setters
@@ -78,5 +82,21 @@ public class Establecimiento {
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+    
+     public Double getX() {
+        return x;
+    }
+
+    public void setX(Double x) {
+        this.x = x;
+    }
+    
+    public Double getY() {
+        return y;
+    }
+
+    public void setY(Double y) {
+        this.y = y;
     }
 }
