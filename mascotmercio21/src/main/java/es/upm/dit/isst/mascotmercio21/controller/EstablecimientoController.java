@@ -4,6 +4,8 @@ import es.upm.dit.isst.mascotmercio21.repository.EstablecimientoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 
 
 
@@ -13,6 +15,16 @@ public class EstablecimientoController {
 
     @Autowired
     private EstablecimientoRepository establecimientoRepository;
+
+    @GetMapping
+    public ResponseEntity<List<Establecimiento>> obtenerTodosLosEstablecimientos() {
+        List<Establecimiento> establecimientos = establecimientoRepository.findAll();
+        if (!establecimientos.isEmpty()) {
+            return ResponseEntity.ok(establecimientos);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Establecimiento> obtenerEstablecimiento(@PathVariable Integer id) {
