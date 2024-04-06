@@ -6,7 +6,7 @@
           height: 100%;
           margin: 0;
           font-family: Arial, sans-serif;
-          background: url('../static/fotos/mascota-hombre-perro-pata.png') no-repeat center center fixed; 
+          background: url('../static/fotos/FotoInicio.png') no-repeat center center fixed; 
           background-size: cover; /* Cubre toda el área visible sin perder proporciones */
       }
       
