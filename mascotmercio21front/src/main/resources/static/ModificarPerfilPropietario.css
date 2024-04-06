@@ -4,12 +4,12 @@
     max-width: 200px; /* Un tamaño mediano para la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
     margin: 0 auto 8px; /* Centra la imagen y agrega espacio antes del título */
-    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    box-shadow: 0 81px 8px rgb(0, 0, 0);
 }
 .sidebar-btn {
             display: block; /* Ocupar todo el ancho de la barra lateral */
             width: 100%; /* Ocupar todo el ancho disponible */
-            padding: 25px; /* Espaciado dentro del botón */
+            padding: 20px; /* Espaciado dentro del botón */
             margin-bottom: 31px; /* Espaciado entre botones */
             background-color: #6CA22C; /* Color de fondo */
             color: white; /* Color de texto */
@@ -17,7 +17,7 @@
             border-radius: 5px; /* Bordes redondeados */
             cursor: pointer; /* Estilo del cursor como un botón */
             text-align: left; /* Alineación del texto a la izquierda */
-            font-size: 18px;
+            font-size: 19px;
             text-align: center;
             border: 2px solid #000000; /* Borde gris para mejorar la estética */
     box-sizing: border-box;
@@ -72,7 +72,7 @@ box-sizing: border-box;
     .sidebar {
 background-color: #A7D489; /* Color de fondo verde claro */
 width: 240px; /* Ancho de la barra lateral */
-top: 135px; /* La altura de la barra de navegación superior más su padding */
+top: 120px; /* La altura de la barra de navegación superior más su padding */
 position: fixed;
 left: 0;
 bottom: 0; /* Se extiende hasta la parte inferior de la ventana */
