@@ -71,7 +71,7 @@
 }
         /* Estilos del contenido principal */
         .main-content {
-    padding-top: 130px; /* Asegúrate de que el contenido comienza debajo de la navbar */
+    padding-top: 132px; /* Asegúrate de que el contenido comienza debajo de la navbar */
     padding-left: 200px; /* Ajuste para que no quede tapado por la barra lateral */
     padding-right: 20px;
     padding-bottom: 5px;
