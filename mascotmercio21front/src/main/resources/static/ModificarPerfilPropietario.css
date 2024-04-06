@@ -4,7 +4,7 @@
     max-width: 200px; /* Un tamaño mediano para la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
     margin: 0 auto 8px; /* Centra la imagen y agrega espacio antes del título */
-    box-shadow: 0 81px 8px rgb(0, 0, 0);
+    box-shadow: 0 8px 10px rgb(0, 0, 0);
 }
 .sidebar-btn {
             display: block; /* Ocupar todo el ancho de la barra lateral */
