@@ -12,6 +12,16 @@ public class PropietarioController {
     @Autowired
     private PropietarioRepository propietarioRepository;
 
+     @GetMapping
+    public ResponseEntity<List<Cliente>> obtenerTodosLosClientes() {
+        List<Cliente> clientes = clienteRepository.findAll();
+        if (!clientes.isEmpty()) {
+            return ResponseEntity.ok(clientes);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Propietario> obtenerPropietario(@PathVariable Integer id) {
         Propietario propietario = propietarioRepository.findById(id).orElse(null);
