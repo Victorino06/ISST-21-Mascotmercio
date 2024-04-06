@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class ClienteController {
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> obtenerCliente(@PathVariable Integer id) {
