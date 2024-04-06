@@ -1,0 +1,85 @@
+.login-logo {
+    display: block;
+    max-width: 200px; /* Un tamaño mediano para la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto 20px; /* Centra la imagen y agrega espacio antes del título */
+}
+.sidebar-btn {
+            display: block; /* Ocupar todo el ancho de la barra lateral */
+            width: 100%; /* Ocupar todo el ancho disponible */
+            padding: 10px; /* Espaciado dentro del botón */
+            margin-bottom: 10px; /* Espaciado entre botones */
+            background-color: #6CA22C; /* Color de fondo */
+            color: white; /* Color de texto */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Estilo del cursor como un botón */
+            text-align: left; /* Alineación del texto a la izquierda */
+        }
+
+        /* Cambio de estilo al pasar el cursor */
+        .sidebar-btn:hover {
+            background-color: #5e8c24;
+        }
+
+
+
+        /* Estilos generales */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos de la barra de navegación superior */
+        .navbar-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0; /* Asegura que la barra esté en la parte superior de la página */
+    background-color: #456735; /* Color de fondo verde oscuro */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 1000; /* Alta para que esté sobre otros elementos */
+    /* No es necesario definir la altura aquí, se ajustará al contenido automáticamente */
+}
+        /* Estilos de la barra lateral */
+        .sidebar {
+    background-color: #A7D489; /* Color de fondo verde claro */
+    width: 200px; /* Ancho de la barra lateral */
+    top: 135px; /* La altura de la barra de navegación superior más su padding */
+    position: fixed;
+    left: 0;
+    bottom: 0; /* Se extiende hasta la parte inferior de la ventana */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es más alto */
+    z-index: 800; /* Menor que la navbar para que no se superponga */
+}
+        /* Estilos del contenido principal */
+        .main-content {
+    padding-top: 135px; /* Asegúrate de que el contenido comienza debajo de la navbar */
+    padding-left: 0px; /* Ajuste para que no quede tapado por la barra lateral */
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin-left: 300px; /* Ajuste para el contenido principal */
+    z-index: 500; /* Menor que la barra de navegación */
+}
+
+        /* Estilos del formulario de búsqueda */
+        .search-bar {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos del mapa */
+        .map-container {
+            width: calc(100% - 220px); /* Ajuste para la barra lateral */
+            height: 500px; /* Altura fija para el mapa */
+            background-image: url('path_to_map_image.jpg'); /* Ruta de la imagen del mapa */
+            background-size: cover;
+            border: 1px solid #ccc;
+        }
+  
