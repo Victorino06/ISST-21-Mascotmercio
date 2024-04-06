@@ -5,7 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import java.time.LocalTime;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class Establecimiento {
@@ -15,16 +16,18 @@ public class Establecimiento {
     private int id;
     private String nombre;
     private String direccion;
-    private LocalTime horario; // Representa el horario utilizando LocalTime
+    private String horario; // Representa el horario como un String ("L-V 9:00-16:00)
     private String descripcion;
     private Double x;
     private Double y; 
     @Lob
     private byte[] foto; // Representa la foto como un arreglo de bytes
+    @JoinColumn (name = "propietario_id")
+    private Propietario propietario;
 
     public Establecimiento() {}
 
-    public Establecimiento(int id, String nombre, String direccion, LocalTime horario, String descripcion, byte[] foto, Double x, Double y) {
+    public Establecimiento(int id, String nombre, String direccion, String horario, String descripcion, byte[] foto, Double x, Double y) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -60,11 +63,11 @@ public class Establecimiento {
         this.direccion = direccion;
     }
 
-    public LocalTime getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(LocalTime horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
@@ -98,5 +101,13 @@ public class Establecimiento {
 
     public void setY(Double y) {
         this.y = y;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
     }
 }
