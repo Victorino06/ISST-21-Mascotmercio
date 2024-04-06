@@ -24,7 +24,7 @@ public class Establecimiento {
 
     public Establecimiento() {}
 
-    public Establecimiento(int id, String nombre, String direccion, LocalTime horario, String descripcion, byte[] foto) {
+    public Establecimiento(int id, String nombre, String direccion, LocalTime horario, String descripcion, byte[] foto, Double x, Double y) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
