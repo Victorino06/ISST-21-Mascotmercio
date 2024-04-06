@@ -73,7 +73,7 @@
     padding-top: 135px; /* Asegúrate de que el contenido comienza debajo de la navbar */
     padding-left: 200px; /* Ajuste para que no quede tapado por la barra lateral */
     padding-right: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     margin-left: 210px; /* Ajuste para el contenido principal */
     z-index: 500; /* Menor que la barra de navegación */
     width: 50%;
@@ -93,7 +93,7 @@
         /* Estilos del mapa */
         .map-container {
             width: 50%; /* Resta el doble del margen para mantener la anchura */
-            height: 500px; /* Altura fija para el mapa */
+            height: 400px; /* Altura fija para el mapa */
              /* Margen para separar el mapa de los otros elementos */
             border: 3px solid #000000; /* Borde gris para mejorar la estética */
             box-sizing: border-box; /* Asegúrate de que el margen y el borde no aumenten el tamaño del mapa */
