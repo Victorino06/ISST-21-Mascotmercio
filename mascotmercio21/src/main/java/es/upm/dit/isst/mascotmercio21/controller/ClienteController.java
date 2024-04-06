@@ -5,13 +5,24 @@ import es.upm.dit.isst.mascotmercio21.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
-    private final ClienteRepository clienteRepository;
+    private ClienteRepository clienteRepository;
+
+    @GetMapping
+    public ResponseEntity<List<Cliente>> obtenerTodosLosClientes() {
+        List<Cliente> clientes = clienteRepository.findAll();
+        if (!clientes.isEmpty()) {
+            return ResponseEntity.ok(clientes);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> obtenerCliente(@PathVariable Integer id) {
@@ -52,4 +63,5 @@ public class ClienteController {
         }
     }
 }
+
 
