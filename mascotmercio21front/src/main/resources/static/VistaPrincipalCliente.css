@@ -1,20 +1,26 @@
+
 .login-logo {
     display: block;
     max-width: 200px; /* Un tamaño mediano para la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto 20px; /* Centra la imagen y agrega espacio antes del título */
+    margin: 0 auto 8px; /* Centra la imagen y agrega espacio antes del título */
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 .sidebar-btn {
             display: block; /* Ocupar todo el ancho de la barra lateral */
             width: 100%; /* Ocupar todo el ancho disponible */
-            padding: 10px; /* Espaciado dentro del botón */
-            margin-bottom: 10px; /* Espaciado entre botones */
+            padding: 25px; /* Espaciado dentro del botón */
+            margin-bottom: 31px; /* Espaciado entre botones */
             background-color: #6CA22C; /* Color de fondo */
             color: white; /* Color de texto */
             border: none; /* Sin bordes */
             border-radius: 5px; /* Bordes redondeados */
             cursor: pointer; /* Estilo del cursor como un botón */
             text-align: left; /* Alineación del texto a la izquierda */
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #000000; /* Borde gris para mejorar la estética */
+    box-sizing: border-box;
         }
 
         /* Cambio de estilo al pasar el cursor */
@@ -29,25 +35,29 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #cbe7bb;
         }
 
         /* Estilos de la barra de navegación superior */
         .navbar-top {
+           
     position: fixed;
     left: 0;
     right: 0;
     top: 0; /* Asegura que la barra esté en la parte superior de la página */
     background-color: #456735; /* Color de fondo verde oscuro */
     color: white;
-    padding: 10px 20px;
+    padding: 6px 20px;
     text-align: center;
     z-index: 1000; /* Alta para que esté sobre otros elementos */
+    border: 3px solid #000000; /* Borde gris para mejorar la estética */
+    box-sizing: border-box;
     /* No es necesario definir la altura aquí, se ajustará al contenido automáticamente */
 }
         /* Estilos de la barra lateral */
         .sidebar {
     background-color: #A7D489; /* Color de fondo verde claro */
-    width: 200px; /* Ancho de la barra lateral */
+    width: 240px; /* Ancho de la barra lateral */
     top: 135px; /* La altura de la barra de navegación superior más su padding */
     position: fixed;
     left: 0;
@@ -56,30 +66,40 @@
     box-sizing: border-box;
     overflow-y: auto; /* Permite desplazamiento si el contenido es más alto */
     z-index: 800; /* Menor que la navbar para que no se superponga */
+    border: 3px solid #000000; /* Borde gris para mejorar la estética */
+    box-sizing: border-box;
 }
         /* Estilos del contenido principal */
         .main-content {
     padding-top: 135px; /* Asegúrate de que el contenido comienza debajo de la navbar */
-    padding-left: 0px; /* Ajuste para que no quede tapado por la barra lateral */
+    padding-left: 200px; /* Ajuste para que no quede tapado por la barra lateral */
     padding-right: 20px;
     padding-bottom: 20px;
-    margin-left: 300px; /* Ajuste para el contenido principal */
+    margin-left: 210px; /* Ajuste para el contenido principal */
     z-index: 500; /* Menor que la barra de navegación */
+    width: 50%;
+    
 }
 
         /* Estilos del formulario de búsqueda */
         .search-bar {
             background-color: #f0f0f0;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding:13px;
+            border: 3px solid #000000; /* Borde gris para mejorar la estética */
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgb(17, 17, 17);
         }
 
         /* Estilos del mapa */
         .map-container {
-            width: calc(100% - 220px); /* Ajuste para la barra lateral */
+            width: 50%; /* Resta el doble del margen para mantener la anchura */
             height: 500px; /* Altura fija para el mapa */
-            background-image: url('path_to_map_image.jpg'); /* Ruta de la imagen del mapa */
-            background-size: cover;
-            border: 1px solid #ccc;
+             /* Margen para separar el mapa de los otros elementos */
+            border: 3px solid #000000; /* Borde gris para mejorar la estética */
+            box-sizing: border-box; /* Asegúrate de que el margen y el borde no aumenten el tamaño del mapa */
+            /* Resto de los estilos que ya tienes para el mapa */
+            margin-left: 410px;
+            margin-right: 150px;
+            box-shadow: 0 4px 8px rgb(17, 17, 17);
         }
-  
