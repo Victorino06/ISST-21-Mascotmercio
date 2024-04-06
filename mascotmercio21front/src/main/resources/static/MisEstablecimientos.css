@@ -1,0 +1,260 @@
+/* Estilos generales y estilos para .navbar-top y .sidebar van aquí... */
+.login-logo {
+    display: block;
+    max-width: 200px; /* Un tamaño mediano para la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto 8px; /* Centra la imagen y agrega espacio antes del título */
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+.sidebar-btn {
+            display: block; /* Ocupar todo el ancho de la barra lateral */
+            width: 100%; /* Ocupar todo el ancho disponible */
+            padding: 25px; /* Espaciado dentro del botón */
+            margin-bottom: 31px; /* Espaciado entre botones */
+            background-color: #6CA22C; /* Color de fondo */
+            color: white; /* Color de texto */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Estilo del cursor como un botón */
+            text-align: left; /* Alineación del texto a la izquierda */
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #000000; /* Borde gris para mejorar la estética */
+    box-sizing: border-box;
+        }
+.main-content {
+    /* Alinea este contenido principal para no solaparse con la barra lateral */
+    margin-left: 200px; /* o el ancho de tu sidebar */
+    padding: 20px;
+}
+
+.profile-container {
+    background-color: #fff; /* o el color de fondo que desees */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px; /* Añade espacio desde la parte superior */
+    display: flex;
+    justify-content: space-between;
+}
+       /* Cambio de estilo al pasar el cursor */
+       .sidebar-btn:hover {
+        background-color: #5e8c24;
+    }
+
+
+
+    /* Estilos generales */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #cbe7bb;
+    }
+
+    /* Estilos de la barra de navegación superior */
+    .navbar-top {
+       
+position: fixed;
+left: 0;
+right: 0;
+top: 0; /* Asegura que la barra esté en la parte superior de la página */
+background-color: #456735; /* Color de fondo verde oscuro */
+color: white;
+padding: 6px 20px;
+text-align: center;
+z-index: 1000; /* Alta para que esté sobre otros elementos */
+border: 3px solid #000000; /* Borde gris para mejorar la estética */
+box-sizing: border-box;
+/* No es necesario definir la altura aquí, se ajustará al contenido automáticamente */
+}
+    /* Estilos de la barra lateral */
+    .sidebar {
+background-color: #A7D489; /* Color de fondo verde claro */
+width: 240px; /* Ancho de la barra lateral */
+top: 135px; /* La altura de la barra de navegación superior más su padding */
+position: fixed;
+left: 0;
+bottom: 0; /* Se extiende hasta la parte inferior de la ventana */
+padding: 20px;
+box-sizing: border-box;
+overflow-y: auto; /* Permite desplazamiento si el contenido es más alto */
+z-index: 800; /* Menor que la navbar para que no se superponga */
+border: 3px solid #000000; /* Borde gris para mejorar la estética */
+box-sizing: border-box;
+}
+    /* Estilos del contenido principal */
+    .main-content {
+padding-top: 150px; /* Asegúrate de que el contenido comienza debajo de la navbar */
+padding-left: 135px; /* Ajuste para que no quede tapado por la barra lateral */
+padding-right: 20px;
+padding-bottom: 20px;
+margin-left: 210px; /* Ajuste para el contenido principal */
+z-index: 500; /* Menor que la barra de navegación */
+width: 50%;
+
+}
+
+.profile-container h2 {
+    
+    text-align: center;
+    color: #4A4A4A; /* o el color que desees */
+}
+
+.form-section {
+    flex: 1;
+}
+
+.form-section.left {
+    padding-right: 10px; /* Espacio entre las columnas de formularios */
+}
+
+.form-section.right {
+    padding-left: 10px; /* Espacio entre las columnas de formularios */
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section input[type="date"] {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 50px; /* Espacio entre los campos de entrada */
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 18px; /* O el tamaño que prefieras */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 146, 32, 0.553);
+}
+
+button {
+    
+   
+    display: block; /* Mantiene el botón como un bloque */
+    width: 100%; /* Ajusta esto para cambiar el ancho del botón */
+    margin: 0 auto; /* Centra el botón dentro de su contenedor */
+    padding: 20px; 
+    background-color: #6CA22C; /* o el color que desees para el botón */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px; /* Espacio encima del botón */
+    
+}
+
+button:hover {
+    background-color: #5e8c24; /* o el color que desees para el hover */
+}
+.modify-profile-title {
+    background-color: #456735; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px 0; /* Margen arriba y abajo */
+    text-align: center; /* Texto centrado */
+    border: 1px solid #ddd; /* Borde ligero para definir el cuadro */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    font-size: 24px; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+    border: 3px solid #000000; /* Borde gris para mejorar la estética */
+box-sizing: border-box;
+}
+
+.map-container {
+    width: 75%; /* Resta el doble del margen para mantener la anchura */
+    height: 400px; /* Altura fija para el mapa */
+     /* Margen para separar el mapa de los otros elementos */
+    border: 3px solid #000000; /* Borde gris para mejorar la estética */
+    box-sizing: border-box; /* Asegúrate de que el margen y el borde no aumenten el tamaño del mapa */
+    /* Resto de los estilos que ya tienes para el mapa */
+    margin-left: 550px;
+    margin-right: 115px;
+    box-shadow: 0 4px 8px rgb(17, 12, 12); 
+}
+
+.main-content {
+    /* Ajustes previos si son necesarios */
+}
+
+.establishments-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto; /* Ajusta el ancho según necesites */
+    margin: 20px;
+}
+
+.section-title {
+    background-color: #6CA22C; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    padding: 10px;
+    margin: 0 -20px 20px -20px; /* Expande el título al ancho completo del contenedor */
+    text-align: center;
+}
+
+.establishment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.establishment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.establishment-name {
+    flex-grow: 1;
+}
+
+.establishment-actions {
+    display: flex;
+}
+.establishment-edit,
+.establishment-delete {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 1px 8px; /* Reduce el tamaño del padding para botones más pequeños */
+    margin-left: 4px; /* Mantén los botones juntos con un margen reducido */
+}
+/* Estilos para los íconos, si estás usando FontAwesome o similar */
+
+
+/* Estilos al pasar el cursor */
+.establishment-edit:hover,
+.establishment-delete:hover {
+    background-color: #e6e6e6; /* Color de fondo al pasar el cursor */
+}
+
+.add-establishment-btn {
+    background-color: #6CA22C; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    display: block; /* Hace que el botón sea un bloque */
+    width: 50%; /* Hace que el botón ocupe todo el ancho del contenedor */
+    margin-top: 20px; /* Margen superior */
+}
+
+.establishment-edit:hover,
+.establishment-delete:hover {
+    background-color: #f2f2f2; /* Color de fondo ligero al pasar el cursor */
+}
+
+/* Limpia los estilos al final */
+.establishment-item:last-child {
+    border-bottom: none; /* Elimina el borde del último elemento */
+}
+
