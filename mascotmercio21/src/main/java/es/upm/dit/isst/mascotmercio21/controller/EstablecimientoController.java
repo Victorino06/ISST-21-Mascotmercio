@@ -8,7 +8,6 @@ import java.util.List;
 
 
 
-
 @RestController
 @RequestMapping("/establecimientos")
 public class EstablecimientoController {
@@ -65,4 +64,6 @@ public class EstablecimientoController {
         }
     }
 }
+
+
 
