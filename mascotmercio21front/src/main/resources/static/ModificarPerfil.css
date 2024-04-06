@@ -10,7 +10,7 @@
             display: block; /* Ocupar todo el ancho de la barra lateral */
             width: 100%; /* Ocupar todo el ancho disponible */
             padding: 20px; /* Espaciado dentro del botón */
-            margin-bottom: 31px; /* Espaciado entre botones */
+            margin-bottom: 13px; /* Espaciado entre botones */
             background-color: #6CA22C; /* Color de fondo */
             color: white; /* Color de texto */
             border: none; /* Sin bordes */
