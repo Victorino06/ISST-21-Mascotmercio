@@ -1,8 +1,4 @@
-
-        /* Estilos personalizados */
-
-        
-        body, html {
+body, html {
           height: 100%;
           margin: 0;
           font-family: Arial, sans-serif;
@@ -38,8 +34,8 @@
             padding: 20px;
             color: #333;
             background-color: #8EC641; /* Fondo de la sección de texto con tonalidad verde */
-            margin-right: 10px;
-            border-radius: 10px;
+            margin-right: 0px;
+            border-radius: 70px;
         }
         .login-section {
             flex: 1;
@@ -124,7 +120,7 @@ body, html {
   }
   .login-logo {
     display: block;
-    max-width: 200px; /* Un tamaño mediano para la imagen */
+    max-width: 260px; /* Un tamaño mediano para la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
     margin: 0 auto 20px; /* Centra la imagen y agrega espacio antes del título */
 }
