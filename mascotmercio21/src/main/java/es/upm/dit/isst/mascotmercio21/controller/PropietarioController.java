@@ -13,10 +13,10 @@ public class PropietarioController {
     private PropietarioRepository propietarioRepository;
 
      @GetMapping
-    public ResponseEntity<List<Cliente>> obtenerTodosLosClientes() {
-        List<Cliente> clientes = clienteRepository.findAll();
-        if (!clientes.isEmpty()) {
-            return ResponseEntity.ok(clientes);
+    public ResponseEntity<List<Propietario>> obtenerTodosLosPropietarios() {
+        List<Propietario> propietarios = propietarioRepository.findAll();
+        if (!propietarios.isEmpty()) {
+            return ResponseEntity.ok(propietarios);
         } else {
             return ResponseEntity.notFound().build();
         }
