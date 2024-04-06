@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.JoinColumn;
+
+
 
 @Entity
 public class Establecimiento {
@@ -16,14 +18,16 @@ public class Establecimiento {
     private int id;
     private String nombre;
     private String direccion;
-    private String horario; // Representa el horario como un String ("L-V 9:00-16:00)
+    private String horario; // Representa el horario como un String ("L-V 9:00-23:00")
     private String descripcion;
     private Double x;
     private Double y; 
     @Lob
     private byte[] foto; // Representa la foto como un arreglo de bytes
+    @ManyToOne
     @JoinColumn (name = "propietario_id")
     private Propietario propietario;
+    
 
     public Establecimiento() {}
 
@@ -102,7 +106,7 @@ public class Establecimiento {
     public void setY(Double y) {
         this.y = y;
     }
-
+    
     public void setPropietario(Propietario propietario) {
         this.propietario = propietario;
     }
