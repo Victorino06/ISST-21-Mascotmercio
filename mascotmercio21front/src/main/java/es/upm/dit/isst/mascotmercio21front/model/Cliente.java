@@ -1,4 +1,4 @@
-package es.upm.dit.isst.mascotmercio21.model;
+package es.upm.dit.isst.mascotmercio21front.model;
 
 import javax.validation.constraints.Email;
 
