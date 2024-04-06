@@ -4,6 +4,7 @@ import es.upm.dit.isst.mascotmercio21.model.Propietario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/propietarios")
