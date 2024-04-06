@@ -1,3 +1,4 @@
+
 .login-logo {
     display: block;
     max-width: 200px; /* Un tamaño mediano para la imagen */
@@ -8,17 +9,18 @@
 .sidebar-btn {
             display: block; /* Ocupar todo el ancho de la barra lateral */
             width: 100%; /* Ocupar todo el ancho disponible */
+            height: 20%;
             padding: 20px; /* Espaciado dentro del botón */
-            margin-bottom: 13px; /* Espaciado entre botones */
+            margin-bottom: 0px; /* Espaciado entre botones */
             background-color: #6CA22C; /* Color de fondo */
             color: white; /* Color de texto */
             border: none; /* Sin bordes */
-            border-radius: 5px; /* Bordes redondeados */
+            border-radius: 0px; /* Bordes redondeados */
             cursor: pointer; /* Estilo del cursor como un botón */
             text-align: left; /* Alineación del texto a la izquierda */
-            font-size: 19px;
+            font-size: 24px;
             text-align: center;
-            border: 2px solid #000000; /* Borde gris para mejorar la estética */
+            border: 1px solid #000000; /* Borde gris para mejorar la estética */
     box-sizing: border-box;
         }
 
@@ -56,16 +58,17 @@
         /* Estilos de la barra lateral */
         .sidebar {
     background-color: #A7D489; /* Color de fondo verde claro */
-    width: 240px; /* Ancho de la barra lateral */
+    width: 300  px; /* Ancho de la barra lateral */
     top: 120px; /* La altura de la barra de navegación superior más su padding */
     position: fixed;
-    left: 0;
-    bottom: 0; /* Se extiende hasta la parte inferior de la ventana */
-    padding: 20px;
+    right: 1100px;
+    left: 0px;
+    bottom: 0px; /* Se extiende hasta la parte inferior de la ventana */
+    padding: 0px;
     box-sizing: border-box;
     overflow-y: auto; /* Permite desplazamiento si el contenido es más alto */
     z-index: 800; /* Menor que la navbar para que no se superponga */
-    border: 3px solid #000000; /* Borde gris para mejorar la estética */
+    border: 2px solid #000000; /* Borde gris para mejorar la estética */
     box-sizing: border-box;
 }
         /* Estilos del contenido principal */
