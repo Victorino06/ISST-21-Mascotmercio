@@ -21,7 +21,7 @@ public class Propietario {
 
     public Propietario(){}
 
-    public Propietario(int id, String nombre, String email, String contraseña) {
+    public Propietario(int id, String nombre, String apellidos,Date fechanacimiento, String email, String contraseña) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
