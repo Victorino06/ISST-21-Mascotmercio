@@ -14,9 +14,9 @@
     
         <div class="sidebar">
             <!-- Botones de la barra lateral -->
-            <button class="sidebar-btn">Inicio</button>
+            <button id="botonInicio" class="sidebar-btn">Inicio</button>
             <button class="sidebar-btn">Mi perfil</button>
-            <button class="sidebar-btn">Mis establecimientos</button>
+            <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
             <button class="sidebar-btn">Mejores establecimientos</button>
             <button class="sidebar-btn">Cerrar sesión</button>
             <!-- Más botones si es necesario -->
@@ -55,5 +55,27 @@
             </div>
         </div>
     </div>
+
+
+
+
+    //Botones
+
+
+<script>
+        document.getElementById('botonInicio').addEventListener('click', function() {
+            window.location.href = 'VistaPrincipalPropietario.html';
+        });
+    </script>
+
+<script>
+    document.getElementById('botonMis').addEventListener('click', function() {
+        window.location.href = 'MisEstablecimientos.html';
+    });
+</script>
+
+
+
 </body>
 </html>
+
