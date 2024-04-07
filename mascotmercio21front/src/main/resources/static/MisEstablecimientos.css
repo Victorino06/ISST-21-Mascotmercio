@@ -58,14 +58,14 @@
     width: 300  px; 
     top: 120px; 
     position: fixed;
-    right: 1100px;
+    right: 1285px;
     left: 0px;
     bottom: 0px; 
     padding: 0px;
     box-sizing: border-box;
     overflow-y: auto; 
     z-index: 800; 
-    border: 2px solid 
+    border: 2px solid; 
     box-sizing: border-box;
 }
         
