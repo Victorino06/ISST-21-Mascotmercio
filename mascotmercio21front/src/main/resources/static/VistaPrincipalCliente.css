@@ -20,7 +20,7 @@
             text-align: left; /* Alineación del texto a la izquierda */
             font-size: 24px;
             text-align: center;
-            border: 1px solid #000000; /* Borde gris para mejorar la estética */
+            border: 2px solid #000000; /* Borde gris para mejorar la estética */
     box-sizing: border-box;
         }
 
@@ -58,7 +58,7 @@
         /* Estilos de la barra lateral */
         .sidebar {
     background-color: #A7D489; /* Color de fondo verde claro */
-    width: 300  px; /* Ancho de la barra lateral */
+    width: 250px; /* Ancho de la barra lateral */
     top: 120px; /* La altura de la barra de navegación superior más su padding */
     position: fixed;
     right: 1100px;
@@ -68,7 +68,7 @@
     box-sizing: border-box;
     overflow-y: auto; /* Permite desplazamiento si el contenido es más alto */
     z-index: 800; /* Menor que la navbar para que no se superponga */
-    border: 2px solid #000000; /* Borde gris para mejorar la estética */
+    border: 1px solid #000000; /* Borde gris para mejorar la estética */
     box-sizing: border-box;
 }
         /* Estilos del contenido principal */
@@ -105,4 +105,3 @@
             margin-right: 150px;
             box-shadow: 0 4px 8px rgb(17, 17, 17);
         }
-
