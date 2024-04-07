@@ -14,7 +14,7 @@
     
         <div class="sidebar">
             <!-- Botones de la barra lateral -->
-            <button class="sidebar-btn">Inicio</button>
+            <button id="perfilBtn" class="sidebar-btn">Inicio</button>
             <button class="sidebar-btn">Mi perfil</button>
             <button class="sidebar-btn">Favoritos</button>
             <button class="sidebar-btn">Mejores establecimientos</button>
@@ -55,5 +55,19 @@
             </div>
         </div>
     </div>
+
+
+    
+
+// Botones 
+
+
+    <script>
+        document.getElementById('perfilBtn').addEventListener('click', function() {
+            window.location.href = 'VistaPrincipalCliente.html';
+        });
+    </script>
+
+    
 </body>
 </html>
