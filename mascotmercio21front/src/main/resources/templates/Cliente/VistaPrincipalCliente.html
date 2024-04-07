@@ -19,7 +19,7 @@
     <div class="sidebar">
         <!-- Botones de la barra lateral -->
         <button class="sidebar-btn">Inicio</button>
-        <button class="sidebar-btn">Mi perfil</button>
+        <button id="perfilBtn" class="sidebar-btn">Mi perfil</button>
         <button class="sidebar-btn">Favoritos</button>
         <button class="sidebar-btn">Mejores establecimientos</button>
         <button class="sidebar-btn">Cerrar sesión</button>
@@ -44,5 +44,15 @@ var map = new mapboxgl.Map({
     zoom: 6 // Nivel de zoom inicial
 });
 </script>
+
+//Botones
+
+<script>
+    document.getElementById('perfilBtn').addEventListener('click', function() {
+        window.location.href = 'ModificarPerfil.html';
+    });
+</script>
+
+
 </body>
 </html>
