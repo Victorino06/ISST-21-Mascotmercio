@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mascotmercio</title>
-    <link rel="stylesheet" href="../../static/AñadirEstablecimiento.css">
+    <link rel="stylesheet" href="/AñadirEstablecimiento.css">
     
     
 </head>
 <body>
 
     <div class="navbar-top">
-    <img src="../../static/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+    <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
    
     </div>
 
     <div class="sidebar">
-        <!-- Botones de la barra lateral -->
-        <button class="sidebar-btn">Inicio</button>
+        <button id="botonInicio" class="sidebar-btn">Inicio</button>
         <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
         <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
         <button class="sidebar-btn">Mejores establecimientos</button>
-        <button class="sidebar-btn">Cerrar sesión</button>
-        <!-- Más botones si es necesario -->
+        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
     </div>
 
     <div class="main-content">
@@ -66,14 +64,21 @@
 
 <script>
     document.getElementById('botonPerfil').addEventListener('click', function() {
-        window.location.href = 'ModificarPerfilPropietario.html';
+        window.location.href = '/propietario/perfil';
     });
 </script>
 
 <script>
     document.getElementById('botonMis').addEventListener('click', function() {
-        window.location.href = 'MisEstablecimientos.html';
+        window.location.href = '/propietario/establecimientos';
     });
+    document.getElementById('botonInicio').addEventListener('click', function() {
+            window.location.href = '/propietario';
+        });
+        document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });
+    
 </script>
 
 
