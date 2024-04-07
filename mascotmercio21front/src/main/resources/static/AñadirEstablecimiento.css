@@ -55,13 +55,14 @@
    
 }
        
+        
         .sidebar {
     background-color: #A7D489; 
-    width: 300  px; 
+    width: 250px; 
     top: 120px; 
     position: fixed;
-    right: 1286px;
-    left: 0px;
+    
+    left: 0;
     bottom: 0px; 
     padding: 0px;
     box-sizing: border-box;
@@ -70,6 +71,7 @@
     border: 1px solid #000000; 
     box-sizing: border-box;
 }
+   
         
         .main-content {
     padding-top: 132px; 
