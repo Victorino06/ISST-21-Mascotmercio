@@ -42,6 +42,23 @@ import java.util.logging.Logger;
     public String pantallaperfilCliente() {
         return "Cliente/ModificarPerfil.html";
     }
+    @GetMapping("/propietario")
+    public String pantallaPropietario() {
+        return "Propietario/VistaPrincipalPropietario.html";
+    }
+    @GetMapping("/propietario/perfil")
+    public String pantallaperfilPropietario() {
+        return "Propietario/ModificarPerfilPropietario.html";
+    }
+    @GetMapping("/propietario/establecimientos")
+    public String pantallaestablecimientosPropietario() {
+        return "Propietario/MisEstablecimientos.html";
+    }
+    @GetMapping("/propietario/establecimientos/añadirestablecimiento")
+    public String pantallanadirEstablecimiento() {
+        return "Propietario/AñadirEstablecimiento.html";
+    }
+
 
 
 
