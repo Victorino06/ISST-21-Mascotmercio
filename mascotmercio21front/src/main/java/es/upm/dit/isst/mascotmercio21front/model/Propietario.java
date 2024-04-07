@@ -1,6 +1,7 @@
 package es.upm.dit.isst.mascotmercio21front.model;
 
 import javax.validation.constraints.Email;
+import java.util.Date;
 
 public class Propietario {
 
