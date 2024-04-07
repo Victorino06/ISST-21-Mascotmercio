@@ -3,7 +3,7 @@ body, html {
           margin: 0;
           font-family: Arial, sans-serif;
           background: url('/fotos/FotoInicio.png') no-repeat center center fixed; 
-          background-size: cover; /* Cubre toda el área visible sin perder proporciones */
+          background-size: cover; 
       }
       
 
@@ -13,7 +13,7 @@ body, html {
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #D4E6A5; /* Fondo general con tonalidad verde */
+            background-color: #D4E6A5; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +24,7 @@ body, html {
             margin: auto;
             display: flex;
             justify-content: space-between;
-            background-color: #A7D489; /* Fondo del contenedor con tonalidad verde */
+            background-color: #A7D489; 
             padding: 20px;
             box-shadow: 0 4px 8px rgb(255, 255, 255);
             border-radius: 10px;
@@ -33,14 +33,14 @@ body, html {
             flex: 1;
             padding: 20px;
             color: #333;
-            background-color: #8EC641; /* Fondo de la sección de texto con tonalidad verde */
+            background-color: #8EC641; 
             margin-right: 0px;
             border-radius: 70px;
         }
         .login-section {
             flex: 1;
             padding: 20px;
-            background-color: #A7D489; /* Fondo de la sección de inicio de sesión con tonalidad verde */
+            background-color: #A7D489; 
             border-radius: 10px;
         }
         h2 {
@@ -57,7 +57,7 @@ body, html {
             margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #ddd;
-            box-sizing: border-box; /* Adds padding without increasing the width */
+            box-sizing: border-box; 
         }
         .btn {
             width: calc(100% - 20px);
@@ -90,17 +90,17 @@ body, html {
         }
    
         .imagenMujerPerro {
-          max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
-          height: auto; /* Mantiene la proporción de la imagen */
-          display: block; /* Asegura que la imagen no tenga elementos inline a su lado */
-          margin: 40px auto; /* Añade espacio por arriba y por abajo y la centra horizontalmente */
+          max-width: 100%; 
+          height: auto; 
+          display: block;
+          margin: 40px auto; 
       }
       
       .imagenFotoDueñoMascota {
-        max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
-        height: auto; /* Mantiene la proporción de la imagen */
-        display: block; /* Asegura que la imagen no tenga elementos inline a su lado */
-        margin: 40px auto; /* Añade espacio por arriba y por abajo y la centra horizontalmente */
+        max-width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 40px auto; 
     }
     
 
@@ -120,9 +120,9 @@ body, html {
   }
   .login-logo {
     display: block;
-    max-width: 260px; /* Un tamaño mediano para la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto 20px; /* Centra la imagen y agrega espacio antes del título */
+    max-width: 260px; 
+    height: auto; 
+    margin: 0 auto 20px; 
 }
 
   .registro-header {
