@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registro de Usuario - MascotComercio</title>
-<link rel="stylesheet" href="../static/RegistroCliente.css">
+<link rel="stylesheet" href="/RegistroCliente.css">
 </head>
 <body>
 
 <div class="contenedor">
     <h2>REGÍSTRESE</h2>
-    <form id="formularioRegistro" action="/api/registro" method="post">
+    <form id="formularioRegistro">
         <div class="fila">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
@@ -40,19 +40,6 @@
             <button type="submit">Registrarse</button>
         </div>
     </form>
-
-    <!-- Formulario de registro anterior -->
-    <h2>Formulario de registro anterior</h2>
-    <form action="/registro" method="post">
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="text" name="apellidos" placeholder="Apellidos">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="contraseña" placeholder="Contraseña">
-        <!-- Otros campos según sea necesario -->
-
-        <button type="submit">Registrarse</button>
-    </form>
-    <!-- Fin del formulario de registro anterior -->
 </div>
 
 </body>
