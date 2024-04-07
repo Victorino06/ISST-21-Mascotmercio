@@ -30,7 +30,7 @@ import java.util.logging.Logger;
         return "pantallaInicial.html";
     }
   
-    @GetMapping("/Registro.html")
+    @GetMapping("/registro")
     public String registro() {
         return "Registro.html";
     }
