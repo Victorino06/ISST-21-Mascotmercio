@@ -34,7 +34,19 @@ import java.util.logging.Logger;
     public String registro() {
         return "Registro.html";
     }
-    
+    @GetMapping("/cliente")
+    public String pantallaCliente() {
+        return "Cliente/VistaPrincipalCliente.html";
+    }
+    @GetMapping("/cliente/perfil")
+    public String pantallaperfilCliente() {
+        return "Cliente/ModificarPerfil.html";
+    }
+
+
+
+
+  }
 
 
 
