@@ -1,5 +1,9 @@
 package es.upm.dit.isst.mascotmercio21front.model;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+
 
 public class Establecimiento {
 
