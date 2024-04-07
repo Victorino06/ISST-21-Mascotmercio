@@ -1,41 +1,42 @@
-@RestController
-@RequestMapping("/")
-public class RegistroController {
+package es.upm.dit.isst.mascotmercio21front.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+import java.util.logging.Logger;
 
-    @Autowired
-    private Logger log;
 
-    @Autowired
-    private ClienteRepository clienteRepository;
 
-    @Autowired
-    private PropietarioRepository propietarioRepository;
 
-    public final String PROPIETARIOMANAGER_STRING= "http://localhost:8083/propietarios/";
-    public final String CLIENTEMANAGER_STRING= "http://localhost:8083/clientes/";
-    public final String ESTABLECIMIENTOMANAGER_STRING= "http://localhost:8083/establecimientos/";
-    private RestTemplate restTemplate = new RestTemplate();
+@Controller
+@RequestMapping
+
+  public class ControllerGeneral {
+   // private Logger log;
+   @Autowired
+   private String propietarioManagerString;
+
+   @Autowired
+   private String clienteManagerString;
+
+   @Autowired
+   private String establecimientoManagerString;
+    
+  
+    // private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/")
     public String pantallainicial() {
         return "pantallaInicial.html";
     }
-
-    @GetMapping("/Registro")
+  
+    @GetMapping("/Registro.html")
     public String registro() {
         return "Registro.html";
     }
+    
 
-    @PostMapping("/api/registro/cliente")
-    public ResponseEntity<String> registrarCliente(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
-        return ResponseEntity.ok("Cliente registrado correctamente");
-    }
 
-    @PostMapping("/api/registro/propietario")
-    public ResponseEntity<String> registrarPropietario(@RequestBody Propietario propietario) {
-        propietarioRepository.save(propietario);
-        return ResponseEntity.ok("Propietario registrado correctamente");
-    }
-}
 
+
+  }
