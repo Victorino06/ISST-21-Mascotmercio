@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotecomercio</title>
-    <link rel="stylesheet" href="../../static/VistaPrincipalCliente.css">
+    <title>Mascotmercio</title>
+    <link rel="stylesheet" href="/VistaPrincipalCliente.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     
@@ -12,7 +12,7 @@
 <body>
 
     <div class="navbar-top">
-    <img src="../../static/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
+    <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
    
     </div>
 
@@ -21,7 +21,7 @@
         <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
         <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
         <button class="sidebar-btn">Mejores establecimientos</button>
-        <button class="sidebar-btn">Cerrar sesión</button>
+        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
     </div>
 
     <div class="main-content">
@@ -49,14 +49,17 @@ var map = new mapboxgl.Map({
 
 <script>
     document.getElementById('botonPerfil').addEventListener('click', function() {
-        window.location.href = 'ModificarPerfilPropietario.html';
+        window.location.href = '/propietario/perfil';
     });
 </script>
 
 <script>
     document.getElementById('botonMis').addEventListener('click', function() {
-        window.location.href = 'MisEstablecimientos.html';
+        window.location.href = '/propietario/establecimientos';
     });
+    document.getElementById('cerrarBoton').addEventListener('click', function() {
+        window.location.href = '/';
+    });  
 </script>
 
 
