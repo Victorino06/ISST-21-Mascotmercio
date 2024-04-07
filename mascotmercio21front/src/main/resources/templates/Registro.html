@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registro de Usuario - MascotComercio</title>
-<link rel="stylesheet" href="../static/RegistroCliente.css">
+<link rel="stylesheet" href="/RegistroCliente.css">
 </head>
 <body>
 
 <div class="contenedor">
     <h2>REGÍSTRESE</h2>
-    <form id="formularioRegistro">
+    <form id="formularioRegistro" action="/registro" method="post">
         <div class="fila">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
@@ -37,10 +37,18 @@
             </label>
         </div>
         <div class="fila">
-            <button type="submit">Registrarse</button>
+            <button type="submit" id="botonRegistrarse">Registrarse</button>
         </div>
     </form>
 </div>
+<script>
+    document.getElementById('formularioRegistro').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+        // Redirecciona a la página principal
+        window.location.href = '/';
+    });
+</script>
+
 
 </body>
 </html>
