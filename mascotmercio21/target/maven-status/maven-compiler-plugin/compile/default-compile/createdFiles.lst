@@ -1,0 +1,10 @@
+es\upm\dit\isst\mascotmercio21\config\CorsConfig.class
+es\upm\dit\isst\mascotmercio21\Mascotmercio21Application.class
+es\upm\dit\isst\mascotmercio21\model\Establecimiento.class
+es\upm\dit\isst\mascotmercio21\model\Usuario.class
+es\upm\dit\isst\mascotmercio21\controller\UserController.class
+es\upm\dit\isst\mascotmercio21\services\MapboxService.class
+es\upm\dit\isst\mascotmercio21\controller\FileUploadController.class
+es\upm\dit\isst\mascotmercio21\repository\EstablecimientoRepository.class
+es\upm\dit\isst\mascotmercio21\controller\EstablecimientoController.class
+es\upm\dit\isst\mascotmercio21\repository\UserRepository.class
