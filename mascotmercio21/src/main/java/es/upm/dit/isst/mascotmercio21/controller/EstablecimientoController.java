@@ -25,7 +25,7 @@ public class EstablecimientoController {
     private MapboxService mapboxService;
 
  
-    @PostMapping("/api/establecimientos")
+    @PostMapping("/api/establecimiento")
     public String createEstablishment(@RequestBody Establecimiento establecimiento) {
         try {
             estRepository.save(new Establecimiento(establecimiento.getUserId(), establecimiento.getNombre(),
