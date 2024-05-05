@@ -1,54 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Mascotmercio - Registro de Usuario </title>
-<link rel="stylesheet" href="/RegistroCliente.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mascotmercio - Registro de Usuario</title>
+    <link rel="stylesheet" href="/RegistroCliente.css" />
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <link href="/toastr.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <h2>REGÍSTRESE</h2>
+      <form id="formularioRegistro" action="">
+        <div class="fila">
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre"
+            required
+          />
+          <input
+            type="text"
+            id="apellidos"
+            name="apellidos"
+            placeholder="Apellidos"
+            required
+          />
+        </div>
+        <div class="fila">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            id="contraseña"
+            name="contraseña"
+            placeholder="Contraseña"
+            required
+          />
+        </div>
+        <div class="fila">
+          <input type="date" id="fechanacimiento" name="fechanacimiento" required />
+        </div>
 
-<div class="contenedor">
-    <h2>REGÍSTRESE</h2>
-    <form id="formularioRegistro" action="/registro" method="post">
         <div class="fila">
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-            <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
-        </div>
-        <div class="fila">
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-        </div>
-        <div class="fila">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-        </div>
-        <div class="fila">
-            <label>
-                <input type="radio" name="tipoUsuario" value="cliente" checked> CLIENTE
-            </label>
-            <label>
-                <input type="radio" name="tipoUsuario" value="propietario"> PROPIETARIO
-            </label>
+          <label>
+            <input
+              id="cliente"
+              type="radio"
+              name="rol_usuario"
+              onclick="rolUsuarioCheck(false)"
+              checked
+            />
+            CLIENTE
+          </label>
+          <label>
+            <input
+              id="propietario"
+              type="radio"
+              name="rol_usuario"
+              onclick="rolUsuarioCheck(true)"
+            />
+            PROPIETARIO
+          </label>
         </div>
         <div class="fila condiciones">
-            <label>
-                <input type="checkbox" name="terminos" required> Acepto los términos y condiciones de uso
-            </label>
+          <label>
+            <input onclick="agree()" type="checkbox" name="accept" required />
+            Acepto los términos y condiciones de uso
+          </label>
         </div>
         <div class="fila">
-            <button type="submit" id="botonRegistrarse">Registrarse</button>
+          <button
+            type="submit"
+            id="botonRegistrarse"
+            class="btn btn-outline-primary"
+          >
+            Registrarse
+          </button>
         </div>
-    </form>
-</div>
-<script>
-    document.getElementById('formularioRegistro').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita que el formulario se envíe automáticamente
-        // Redirecciona a la página principal
-        window.location.href = '/';
-    });
-</script>
+        <div class="fila text-center">
+          <a href="/" class="register-link text-center">
+            Página de inicio de sesión
+          </a>
+        </div>
+      </form>
+    </div>
+    <script src="/jquery.min.js"></script>
+    <script src="/toastr.min.js"></script>
+    <script>
+      var rol_usuario = false;
+      var agreement = 0;
 
+      function rolUsuarioCheck(user) {
+        rol_usuario = user;
+      }
 
-</body>
+      function agree() {
+        agreement = 1;
+      }
+
+      document
+        .getElementById("formularioRegistro")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita que el formulario se envíe automáticamente
+          let email = $("#email").val();
+          if ($("#nombre").val() == "") toastr.warning("Introduce tu nombre");
+          else if ($("#apellidos").val() == "") toastr.warning("Introduce tus apellidos");
+          else if (email == "") toastr.warning("Introduce tu email");
+          else if ($("#contraseña").val() == "") toastr.warning("Introduce tu contraseña");
+          else if ($("#fechanacimiento").val() == "") toastr.warning("Introduce tu fecha de nacimiento");
+          else if (agreement == 0) toastr.warning("Acepte los terminos y condiciones");
+          else {
+            let tranData = {
+              nombre: $("#nombre").val(),
+              apellidos: $("#apellidos").val(),
+              email,
+              contraseña: $("#contraseña").val(),
+              fechanacimiento: $("#fechanacimiento").val(),
+              rol_usuario,
+            };
+            $.ajax({
+              url: "http://localhost:8080/api/usuario", // URL del endpoint
+              type: "POST",
+              contentType: "application/json",
+              data: JSON.stringify(tranData), // Datos a enviar al backend
+              success: function (response) {
+                if (response == "EXIST") toastr.warning("El usuario existe");
+                else if (response == "REGISTER_SUCCESS") {
+                  toastr.success("Registro satisfactorio");
+                  window.location.href = "/";
+                }
+              },
+              error: function (xhr, status, error) {
+                toastr.error("Error sending data:", error);
+              },
+            });
+          }
+        });
+    </script>
+  </body>
 </html>
