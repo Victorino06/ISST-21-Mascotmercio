@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mascotmercio</title>
-    <link rel="stylesheet" href="/AñadirEstablecimiento.css">
-    
-    
-</head>
-<body>
+    <link rel="stylesheet" href="/AñadirEstablecimiento.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <link href="/toastr.min.css" rel="stylesheet" />
+  </head>
+  <body>
 
     <div class="navbar-top">
     <img src="/fotos/logo_mascotmercio.png" alt="Logo" class="login-logo">
@@ -16,72 +20,162 @@
     </div>
 
     <div class="sidebar">
-        <button id="botonInicio" class="sidebar-btn">Inicio</button>
-        <button id="botonPerfil" class="sidebar-btn">Mi perfil</button>
-        <button id="botonMis" class="sidebar-btn">Mis establecimientos</button>
-        <button class="sidebar-btn">Mejores establecimientos</button>
-        <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+        <a href="/propietario" id="inicioBoton" class="sidebar-btn">Inicio</a>
+        <a href="/propietario/perfil" class="sidebar-btn">Mi perfil</a>
+        <a href="/propietario/establecimientos" class="sidebar-btn">Mis establecimientos</a>
+        <a href="/" id="cerrarBoton" class="sidebar-btn">Cerrar sesión</a>
     </div>
 
-    <div class="main-content">
-        <div class="header-box">
+    <div class="main-content row">
+        <div class="col col-md-6">
+          <div class="header-box">
             <h1>AÑADIR ESTABLECIMIENTO</h1>
-        </div>
-        <div class="form-box">
-            <form action="/ruta-para-procesar-formulario" method="post" enctype="multipart/form-data">
-            <div class="form-group">
+          </div>
+          <div class="form-box">
+            <form
+              id="addestablishment"
+              action="/ruta-para-procesar-formulario"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="form-group">
                 <label for="nombre">Nombre del establecimiento:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
-            </div>
-            <div class="form-group">
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+              <div class="form-group">
                 <label for="descripcion">Descripción del establecimiento:</label>
                 <textarea id="descripcion" name="descripcion" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="horario_apertura">Horario apertura:</label>
-                <input type="time" id="horario_apertura" name="horario_apertura" required>
-            </div>
-            <div class="form-group">
-                <label for="horario_cierre">Horario cierre:</label>
-                <input type="time" id="horario_cierre" name="horario_cierre" required>
-            </div>
-            <div class="form-group">
-                <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" name="imagen" accept="image/*">
-            </div>
-            <button type="submit">AÑADIR</button>
-        </form>
-    </div>
-    
-
-
-
-
-
-<script>
-    document.getElementById('botonPerfil').addEventListener('click', function() {
-        window.location.href = '/propietario/perfil';
-    });
-</script>
-
-<script>
-    document.getElementById('botonMis').addEventListener('click', function() {
-        window.location.href = '/propietario/establecimientos';
-    });
-    document.getElementById('botonInicio').addEventListener('click', function() {
-            window.location.href = '/propietario';
+              </div>
+              <div class="form-group">
+                <label for="apertura">Horario apertura:</label>
+                <input type="time" id="apertura" name="apertura" required />
+              </div>
+              <div class="form-group">
+                <label for="cierre">Horario cierre:</label>
+                <input type="time" id="cierre" name="cierre" required />
+              </div>
+              <div class="form-group">
+                <label for="foto">Imagen:</label>
+                <input
+                  type="file"
+                  id="foto"
+                  name="foto"
+                  accept="image/*"
+                  onchange="previewAvatar(event)"
+                />
+  
+                
+                <img id="avatar-preview" src="#" alt="Avatar Preview" />
+              </div>
+              <button type="submit" class="btn btn-outline-success">
+                AÑADIR ESTABLECIMIENTO
+              </button>
+            </form>
+          </div>
+        </div>
+        <div id="map" class="map-container col col-md-6"></div>
+      </div>
+  
+      <script src="/jquery.min.js"></script>
+      <script src="/toastr.min.js"></script>
+      <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+      <script>
+        
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiaG9uZGEwNiIsImEiOiJjbHVudXMzZ2sxaXhjMnFsaW9sM3lpeGpuIn0.uGP_UnWdUQtnJ4uVmg03MQ";
+        var map = new mapboxgl.Map({
+          container: "map",
+          style: "mapbox://styles/mapbox/streets-v11",
+          center: [-3.703583, 40.416705], 
+          zoom: 10,
         });
-        document.getElementById('cerrarBoton').addEventListener('click', function() {
-        window.location.href = '/';
-    });
-    
-</script>
-
-
-
-</body>
-</html>
+  
+        function previewAvatar(event) {
+          
+          var file = event.target.files[0];
+  
+          // Check if a file was selected
+          if (file) {
+            // Create a FileReader object
+            var reader = new FileReader();
+  
+            // Set up the FileReader onload event handler
+            reader.onload = function (e) {
+              // Set the source of the image to the data URL representing the selected file
+              document.getElementById("avatar-preview").src = e.target.result;
+            };
+  
+            // Read the selected file as a data URL
+            reader.readAsDataURL(file);
+          }
+        }
+  
+        
+        var marker = new mapboxgl.Marker();
+        var direccion = "";
+  
+        // Add click event listener to the map
+        map.on("click", function (e) {
+          // Get the coordinates of the point where the user clicked
+          var coordinates = e.lngLat;
+  
+          // Update the marker's position to the clicked location
+          marker.setLngLat(coordinates).addTo(map);
+  
+          // Display coordinates in the console (you can save them to a variable or send them to a server)
+          console.log("Clicked coordinates:", JSON.stringify(coordinates));
+          direccion = JSON.stringify(coordinates);
+        });
+  
+        document
+          .getElementById("addestablishment")
+          .addEventListener("submit", function () {
+            event.preventDefault();
+  
+            if (direccion == "") toastr.warning("Selecciona la posicion en el mapa");
+            else {
+              var fileInput = document.getElementById("foto");
+              var file = fileInput.files[0];
+  
+              var formData = new FormData();
+              formData.append("file", file);
+  
+              $.ajax({
+                url: "http://localhost:8080/upload",
+                type: "POST",
+                data: formData,
+                processData: false, // Prevent jQuery from automatically processing the data
+                contentType: false, // Prevent jQuery from setting the Content-Type header
+                success: function (response) {
+                  let transData = {
+                    user: sessionStorage.getItem("userId"),
+                    nombre: $("#nombre").val(),
+                    descripcion: $("#descripcion").val(),
+                    apertura: $("#apertura").val(),
+                    cierre: $("#cierre").val(),
+                    foto: response,
+                    direccion: JSON.stringify(direccion),
+                  };
+  
+                  $.ajax({
+                    url: "http://localhost:8080/api/establecimiento", 
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(transData),
+                    success: function (res) {
+                      toastr.success("Registro satisfactorio");
+                    },
+                    error: function (xhr, status, error) {
+                      console.error("File upload failed:", error);
+                    },
+                  });
+                },
+                error: function (xhr, status, error) {
+                  console.error("File upload failed:", error);
+                },
+              });
+            }
+          });
+      </script>
+    </body>
+  </html>
