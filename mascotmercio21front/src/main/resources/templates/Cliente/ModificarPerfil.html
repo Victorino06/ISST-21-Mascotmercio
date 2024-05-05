@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Perfil</title>
     <link rel="stylesheet" href="/ModificarPerfil.css"> 
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <link href="/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar-top">
@@ -13,59 +15,89 @@
         </div>
     
         <div class="sidebar">
-            <button id="inicioBoton" class="sidebar-btn">Inicio</button>
-            <button class="sidebar-btn">Mi perfil</button>
-            <button class="sidebar-btn">Favoritos</button>
-            <button class="sidebar-btn">Mejores establecimientos</button>
-            <button id="cerrarBoton" class="sidebar-btn">Cerrar sesión</button>
+            <a href="/cliente" id="inicioBoton" class="sidebar-btn">Inicio</a>
+            <a href="/cliente/perfil" class="sidebar-btn">Mi perfil</a>
+            <a href="/" id="cerrarBoton" class="sidebar-btn">Cerrar sesión</a>
         </div>
 
     <div class="main-content">
         <h2 class="modify-profile-title">MODIFICAR PERFIL</h2>
-        <div class="profile-container">
-            
+        <div class="profile-container container-fluid">
             <div class="form-section left">
-                <form>
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" value="Sergio">
-                    
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" id="apellidos" value="Perez Contri">
-                    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" value="sergioperez@gmail.com">
-                    
-                  
-                    <button type="submit">Guardar</button>
-                </form>
+              <label for="nombre">Nombre</label>
+              <input class="form-control" type="text" id="nombre" />
+    
+              <label for="email">Email</label>
+              <input class="form-control" type="email" id="email" />
+    
+              <label for="fechanacimiento">Fecha de nacimiento</label>
+              <input class="form-control" type="date" id="fechanacimiento" />
             </div>
             <div class="form-section right">
-                <form>
-                    <label for="usuario">Nombre de usuario</label>
-                    <input type="text" id="usuario" value="sergioperez99">
-                    
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" value="********">
-                    
-                    <label for="fecha-nacimiento">Fecha de nacimiento</label>
-                    <input type="date" id="fecha-nacimiento" value="1999-05-08">
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-// Botones 
-
-    <script>
-        document.getElementById('inicioBoton').addEventListener('click', function() {
-            window.location.href = '/cliente';
-        });
-        document.getElementById('cerrarBoton').addEventListener('click', function() {
-            window.location.href = '/';
-        });
-    </script>
-
+              <label for="apellidos">Apellido</label>
+              <input class="form-control" type="text" id="apellidos" />
     
-</body>
-</html>
+              <label for="contraseña">Contraseña</label>
+              <input class="form-control" type="password" id="contraseña" />
+    
+              <button
+                class="btn btn-outline-primary mt-4"
+                onclick="actualizarPerfil()"
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <script src="/jquery.min.js"></script>
+        <script src="/toastr.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            $.get(
+              "http://localhost:8080/api/usuario/" + sessionStorage.getItem("userId"),
+              function (data) {
+                $("#nombre").val(data.nombre);
+                $("#apellidos").val(data.apellidos);
+                $("#email").val(data.email);
+                $("#contraseña").val(data.contraseña);
+                $("#fechanacimiento").val(data.fechanacimiento);
+              }
+            );
+          });
+    
+          function actualizarPerfil() {
+            if ($("#nombre").val() == "") toastr.warning("Introduce tu nombre");
+            else if ($("#apellidos").val() == "") toastr.warning("Introduce tus apellidos");
+            else if ($("#email").val() == "") toastr.warning("Introduce tu email");
+            else if ($("#contraseña").val() == "") toastr.warning("Introduce tu contraseña");
+            else if ($("#fechanacimiento").val() == "") toastr.warning("Introduce tu fecha de nacimiento");
+            else {
+              let tranData = {
+                nombre: $("#nombre").val(),
+                apellidos: $("#apellidos").val(),
+                email: $("#email").val(),
+                contraseña: $("#contraseña").val(),
+                fechanacimiento: $("#fechanacimiento").val(),
+                memberType:
+                  sessionStorage.getItem("member") == "cliente" ? false : true,
+              };
+              $.ajax({
+                url:
+                  "http://localhost:8080/api/usuario/" +
+                  sessionStorage.getItem("userId"), // URL del endpoint
+                type: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify(tranData), // Datos a enviar al backend
+                success: function (response) {
+                  toastr.info("Perfil modificado");
+                },
+                error: function (xhr, status, error) {
+                  toastr.error("Error sending data:", error);
+                },
+              });
+            }
+          }
+        </script>
+      </body>
+    </html>
