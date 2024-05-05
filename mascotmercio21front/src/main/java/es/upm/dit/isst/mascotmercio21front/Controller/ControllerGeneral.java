@@ -12,18 +12,6 @@ import java.util.logging.Logger;
 @RequestMapping
 
   public class ControllerGeneral {
-   // private Logger log;
-   @Autowired
-   private String propietarioManagerString;
-
-   @Autowired
-   private String clienteManagerString;
-
-   @Autowired
-   private String establecimientoManagerString;
-    
-  
-    // private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/")
     public String pantallainicial() {
