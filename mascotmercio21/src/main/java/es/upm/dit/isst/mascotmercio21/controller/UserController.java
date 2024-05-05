@@ -56,7 +56,7 @@ public class UserController {
             List<Usuario> existList = userRepository.findByEmail(email);
             if (existList.size() != 0) {
                 if (existList.get(0).getcontraseña().equals(contraseña)) {
-                    String member = !existList.get(0).getRolUsuario() ? "Cliente" : "Propietario";
+                    String member = !existList.get(0).getRolUsuario() ? "cliente" : "propietario";
                     long userId = existList.get(0).getId();
                     return "LOGIN_SUCCESS&" + member + "&" + userId;
                 } else {
