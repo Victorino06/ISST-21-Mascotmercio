@@ -53,7 +53,7 @@
             <input
               id="cliente"
               type="radio"
-              name="rol_usuario"
+              name="rolUsuario"
               onclick="rolUsuarioCheck(false)"
               checked
             />
@@ -63,7 +63,7 @@
             <input
               id="propietario"
               type="radio"
-              name="rol_usuario"
+              name="rolUsuario"
               onclick="rolUsuarioCheck(true)"
             />
             PROPIETARIO
@@ -94,11 +94,12 @@
     <script src="/jquery.min.js"></script>
     <script src="/toastr.min.js"></script>
     <script>
-      var rol_usuario = false;
+      var rolUsuario;
       var agreement = 0;
 
-      function rolUsuarioCheck(user) {
-        rol_usuario = user;
+      function rolUsuarioCheck(isPropietario) {
+        rolUsuario = isPropietario;
+        console.log("rolUsuario actualizado a: ", rolUsuario);
       }
 
       function agree() {
@@ -123,7 +124,7 @@
               email,
               contraseña: $("#contraseña").val(),
               fechanacimiento: $("#fechanacimiento").val(),
-              rol_usuario,
+              rolUsuario,
             };
             $.ajax({
               url: "http://localhost:8080/api/usuario", // URL del endpoint
