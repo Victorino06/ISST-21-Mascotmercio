@@ -74,7 +74,9 @@ public class EstablecimientoController {
      
     @GetMapping("/api/establecimiento/{key}")
     public ResponseEntity<Establecimiento> getEstablecimientoByKey(@PathVariable("key") String query) {
+        System.out.println("- --------- " + query);
         List<Establecimiento> ests = estRepository.findByNombreContainingIgnoreCase(query);
+        System.out.println(ests.get(0).getId());
         if (ests.size() == 0) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
