@@ -94,18 +94,12 @@
           
           var file = event.target.files[0];
   
-          // Check if a file was selected
+
           if (file) {
-            // Create a FileReader object
             var reader = new FileReader();
-  
-            // Set up the FileReader onload event handler
             reader.onload = function (e) {
-              // Set the source of the image to the data URL representing the selected file
               document.getElementById("avatar-preview").src = e.target.result;
             };
-  
-            // Read the selected file as a data URL
             reader.readAsDataURL(file);
           }
         }
@@ -113,16 +107,11 @@
         
         var marker = new mapboxgl.Marker();
         var direccion = "";
-  
-        // Add click event listener to the map
+
+        
         map.on("click", function (e) {
-          // Get the coordinates of the point where the user clicked
           var coordinates = e.lngLat;
-  
-          // Update the marker's position to the clicked location
           marker.setLngLat(coordinates).addTo(map);
-  
-          // Display coordinates in the console (you can save them to a variable or send them to a server)
           console.log("Clicked coordinates:", JSON.stringify(coordinates));
           direccion = JSON.stringify(coordinates);
         });
@@ -144,8 +133,8 @@
                 url: "http://localhost:8080/upload",
                 type: "POST",
                 data: formData,
-                processData: false, // Prevent jQuery from automatically processing the data
-                contentType: false, // Prevent jQuery from setting the Content-Type header
+                processData: false, 
+                contentType: false, 
                 success: function (response) {
                   let transData = {
                     user: sessionStorage.getItem("userId"),
