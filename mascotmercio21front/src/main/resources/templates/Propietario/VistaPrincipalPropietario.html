@@ -11,25 +11,7 @@
     />
     <link href="/bootstrap.min.css" rel="stylesheet" />
     <link href="/toastr.min.css" rel="stylesheet" />
-    <style>
-      .marker {
-        width: 20px;
-        height: 20px;
-        background-color: red;
-        border-radius: 50%;
-        position: absolute;
-        animation: bounce 1s infinite alternate;
-      }
 
-      @keyframes bounce {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-20px);
-        }
-      }
-    </style>
   </head>
   <body>
 
@@ -38,12 +20,12 @@
    
     </div>
 
-    <div class="sidebar">
-        <a href="/propietario" id="inicioBoton" class="sidebar-btn">Inicio</a>
-            <a href="/propietario/perfil" class="sidebar-btn">Mi perfil</a>
-            <a href="/propietario/establecimientos" class="sidebar-btn">Mis establecimientos</a>
-            <a href="/" id="cerrarBoton" class="sidebar-btn">Cerrar sesión</a>
-    </div>
+      <div class="sidebar">
+          <a href="/propietario" id="inicioBoton" class="sidebar-btn">Inicio</a>
+              <a href="/propietario/perfil" class="sidebar-btn">Mi perfil</a>
+              <a href="/propietario/establecimientos" class="sidebar-btn">Mis establecimientos</a>
+              <a href="/" id="cerrarBoton" class="sidebar-btn">Cerrar sesión</a>
+      </div>
 
     <div class="main-content">
         <div class="search-bar row">
@@ -77,10 +59,10 @@
         function searchNearest() {
           let filter = $("#filter").val();
           $.get(
-            "http://localhost:8080/api/establecimiento/" + filter,
+            "http://localhost:8080/api/establecimientos/" + filter,
             function (data) {
               var direccion = data.direccion;
-              let parts = address.split(",");
+              let parts = direccion.split(",");
               var lng = parts[0].split(":")[1];
               var lat = parts[1].split(":")[1].split("}")[0];
               let lngLat = new mapboxgl.LngLat(lng, lat);
