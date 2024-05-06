@@ -34,6 +34,7 @@ public class FileUploadController {
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+        System.out.println(" - file -");
         if (file.isEmpty()) {
             return "SELECT_FILE";
         }
@@ -46,6 +47,7 @@ public class FileUploadController {
         try {
             byte[] bytes = file.getBytes();
             String[] parts = file.getOriginalFilename().split("\\.");
+            System.out.println("  --------------------- file  -------------------" + file.getOriginalFilename());
             int len = parts.length;
             String newName = generateRandomString(10) + "." + parts[len - 1];
             Path path = Paths.get(UPLOAD_DIR + newName);
