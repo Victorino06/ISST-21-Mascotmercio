@@ -72,7 +72,7 @@ public class EstablecimientoController {
     }
 
      
-    @GetMapping("/api/establecimiento/{key}")
+    @GetMapping("/api/establecimientos/{key}")
     public ResponseEntity<Establecimiento> getEstablecimientoByKey(@PathVariable("key") String query) {
         System.out.println("- --------- " + query);
         List<Establecimiento> ests = estRepository.findByNombreContainingIgnoreCase(query);
