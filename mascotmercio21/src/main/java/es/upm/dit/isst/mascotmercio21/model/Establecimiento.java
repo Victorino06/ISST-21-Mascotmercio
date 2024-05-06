@@ -48,11 +48,11 @@ public class Establecimiento {
     return id;
   }
   
-  public String getUserId() {
+  public String getUser() {
     return userid;
   }
 
-  public void setUserId(String userid) {
+  public void setUser(String userid) {
       this.userid = userid;
   }
 
