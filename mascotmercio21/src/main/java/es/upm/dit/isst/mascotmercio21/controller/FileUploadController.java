@@ -27,7 +27,6 @@ public class FileUploadController {
             sb.append(characters.charAt(index));
         }
 
-        // Convert StringBuilder to String and return
         return sb.toString();
     }
 
