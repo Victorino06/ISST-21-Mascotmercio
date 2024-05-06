@@ -10,9 +10,10 @@
       href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    
     <link href="/bootstrap.min.css" rel="stylesheet" />
     <link href="/toastr.min.css" rel="stylesheet" />
+
   </head>
 <body>
 
@@ -45,6 +46,7 @@
       <div id="map" class="map-container"></div>
       <script src="/jquery.min.js"></script>
       <script src="/toastr.min.js"></script>
+      <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
       <script>
         mapboxgl.accessToken =
           "pk.eyJ1IjoiaG9uZGEwNiIsImEiOiJjbHVudXMzZ2sxaXhjMnFsaW9sM3lpeGpuIn0.uGP_UnWdUQtnJ4uVmg03MQ";
@@ -58,19 +60,24 @@
         function searchNearest() {
           let filter = $("#filter").val();
           $.get(
-            "http://localhost:8080/api/establecimiento/" + filter,
+            "http://localhost:8080/api/establecimientos/" + filter,
             function (data) {
               var direccion = data.direccion;
               let parts = direccion.split(",");
-             
-              var lng = parseFloat(parts[0].split(":")[1]);
-              var lat = parseFloat(parts[1].split(":")[1].split("}")[0]);
-              var lngLat = [lng, lat];
+              var lng = parts[0].split(":")[1];
+              var lat = parts[1].split(":")[1].split("}")[0];
+              let lngLat = new mapboxgl.LngLat(lng, lat);
+              var map = new mapboxgl.Map({
+                container: "map",
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: [lng, lat], 
+                zoom: 13,
+              });
   
-              
+             
               var marker = new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
   
-              
+            
               var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
                 "<h3>" + data.nombre + "</h3><p>" + data.descripcion + "</p>"
               );
@@ -82,3 +89,4 @@
       </script>
     </body>
   </html>
+
