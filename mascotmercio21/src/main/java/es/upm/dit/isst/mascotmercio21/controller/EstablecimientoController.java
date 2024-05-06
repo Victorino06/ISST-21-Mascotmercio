@@ -28,7 +28,7 @@ public class EstablecimientoController {
     @PostMapping("/api/establecimiento")
     public String createEstablishment(@RequestBody Establecimiento establecimiento) {
         try {
-            estRepository.save(new Establecimiento(establecimiento.getUserId(), establecimiento.getNombre(),
+            estRepository.save(new Establecimiento(establecimiento.getUser(), establecimiento.getNombre(),
                     establecimiento.getDescripcion(), establecimiento.getDireccion(), establecimiento.getFoto(),
                     establecimiento.getApertura(), establecimiento.getCierre()));
             return "REGISTER_SUCCESS";
@@ -40,8 +40,6 @@ public class EstablecimientoController {
     
     @PutMapping("/api/establecimiento/{estId}")
     public String updateEstablishment(@PathVariable("estId") long id, @RequestBody Establecimiento establecimiento) {
-        System.out.println(" --------- " + id);
-        System.out.println(" --------- " + establecimiento);
         Optional<Establecimiento> estData = estRepository.findById(id);
 
         try {
