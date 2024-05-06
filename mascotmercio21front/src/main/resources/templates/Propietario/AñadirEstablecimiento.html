@@ -128,7 +128,7 @@
   
               var formData = new FormData();
               formData.append("file", file);
-  
+                console.log("before file --- ");
               $.ajax({
                 url: "http://localhost:8080/upload",
                 type: "POST",
@@ -145,7 +145,7 @@
                     foto: response,
                     direccion: JSON.stringify(direccion),
                   };
-  
+                  console.log(transData);
                   $.ajax({
                     url: "http://localhost:8080/api/establecimiento", 
                     type: "POST",
