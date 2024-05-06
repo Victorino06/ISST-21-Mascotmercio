@@ -6,6 +6,23 @@
     margin: 0 auto 8px; 
     box-shadow: 0 8px 10px rgb(0, 0, 0);
 }
+.marker {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    animation: bounce 1s infinite alternate;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
 .sidebar-btn {
             display: block; 
             width: 100%; 
