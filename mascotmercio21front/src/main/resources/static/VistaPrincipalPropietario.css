@@ -24,22 +24,22 @@
     }
   }
 .sidebar-btn {
-            display: block; 
-            width: 100%; 
-            height: 20%;
-            padding: 20px; 
-            margin-bottom: 0px; 
-            background-color: #6CA22C; 
-            color: white; 
-            border: none; 
-            border-radius: 0px; 
-            cursor: pointer; 
-            text-align: left; 
-            font-size: 24px;
-            text-align: center;
-            border: 1px solid #000000; 
-            box-sizing: border-box;
-        }
+    display: block; 
+    width: 100%; 
+    height: 33.3%;
+    padding: 66px; 
+    margin-bottom: 0px; 
+    background-color: #6CA22C; 
+    color: rgb(0, 0, 0); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-align: left; 
+    font-size: 34px;
+    text-align: center;
+    border: 1px solid #000000; 
+    box-sizing: border-box;
+}
 
        
         .sidebar-btn:hover {
@@ -53,7 +53,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #cbe7bb;
+            background-color: #ffffff;
         }
 
         
